@@ -1,13 +1,11 @@
 <div class="container-fluid">
   <div class="task-list">
     <div class="row">
-      <% @tasks.each do |day, array_of_tasks| %>
+      <% @tasks.each do |day, tasks_by_status| %>
         <div class="col-md-2 panel panel-default">
           <h3><%= day %></h3>
           <ul class="list-group">
-            <% tasks_by_status = array_of_tasks.select { |task| !task.completed } %>
             <%= erb :'users/task_items_partial', locals: {list: tasks_by_status} %>
-            <% tasks_by_status = array_of_tasks.select { |task| task.completed } %>
             <%= erb :'users/task_items_partial', locals: {list: tasks_by_status} %>
           </ul>
         </div>
