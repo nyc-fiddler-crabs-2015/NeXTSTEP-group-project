@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <% @tasks.each do |day, array_of_tasks| %>
+      <div class="col-md-2 panel panel-default">
+        <div class="panel-heading day-title"><%= day %></div>
+        <div class="panel-body">
+          <ul class="list-group">
+            <% array_of_tasks.select { |task| !task.completed }.each do |open_task| %>
+            <li class="list-group-item"><%= open_task.title %></li>
+            <% end %>
+          </ul>
+        </div>
+
+      </div>
+
+
+    <% end %>
+  </div>
+
+
+
+</div>
