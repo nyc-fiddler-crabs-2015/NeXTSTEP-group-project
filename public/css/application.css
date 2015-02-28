@@ -7,3 +7,7 @@ a.task-item {
   color: black;
   text-decoration: none;
 }
+
+.completed-item {
+  text-decoration: line-through !important;
+}

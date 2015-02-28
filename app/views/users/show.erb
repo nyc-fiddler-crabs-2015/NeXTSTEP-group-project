@@ -5,21 +5,10 @@
         <div class="col-md-2 panel panel-default">
           <h3><%= day %></h3>
           <ul class="list-group">
-            <% array_of_tasks.select { |task| !task.completed }.each do |open_task| %>
-            <li class="list-group-item">
-              <!-- mark complete -->
-              <a class="task-item" data-toggle="collapse" href="#task<%= open_task.id %>subtasks">
-                <%= open_task.title %>
-              </a>
-              <div class="collapse" id="task<%= open_task.id %>subtasks">
-                <!-- edit task -->
-                <% open_task.subtasks.select { |subtask| !subtask.completed }.each do |open_subtask| %>
-                <!-- mark complete -->
-                  <p class="subtask-item"><%= open_subtask.title %></p>
-                <% end %>
-              </div>
-            </li>
-            <% end %>
+            <% tasks_by_status = array_of_tasks.select { |task| !task.completed } %>
+            <%= erb :'users/task_items_partial', locals: {list: tasks_by_status} %>
+            <% tasks_by_status = array_of_tasks.select { |task| task.completed } %>
+            <%= erb :'users/task_items_partial', locals: {list: tasks_by_status} %>
           </ul>
         </div>
       <% end %>
