@@ -1,22 +1,29 @@
-<div class="container">
-  <div class="row">
-    <% @tasks.each do |day, array_of_tasks| %>
-      <div class="col-md-2 panel panel-default">
-        <div class="panel-heading day-title"><%= day %></div>
-        <div class="panel-body">
+<div class="container-fluid">
+  <div class="task-list">
+    <div class="row">
+      <% @tasks.each do |day, array_of_tasks| %>
+        <div class="col-md-2 panel panel-default">
+          <h3><%= day %></h3>
           <ul class="list-group">
             <% array_of_tasks.select { |task| !task.completed }.each do |open_task| %>
-            <li class="list-group-item"><%= open_task.title %></li>
+            <li class="list-group-item">
+              <!-- mark complete -->
+              <a class="task-item" data-toggle="collapse" href="#task<%= open_task.id %>subtasks">
+                <%= open_task.title %>
+              </a>
+              <div class="collapse" id="task<%= open_task.id %>subtasks">
+                <!-- edit task -->
+                <% open_task.subtasks.select { |subtask| !subtask.completed }.each do |open_subtask| %>
+                <!-- mark complete -->
+                  <p class="subtask-item"><%= open_subtask.title %></p>
+                <% end %>
+              </div>
+            </li>
             <% end %>
           </ul>
         </div>
-
-      </div>
-
-
-    <% end %>
+      <% end %>
+    </div>
   </div>
-
-
-
 </div>
+

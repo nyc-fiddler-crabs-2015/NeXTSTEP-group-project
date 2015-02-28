@@ -1,0 +1,9 @@
+.task-list {
+  width: 95%;
+  margin: auto;
+}
+
+a.task-item {
+  color: black;
+  text-decoration: none;
+}
