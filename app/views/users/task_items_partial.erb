@@ -1,7 +1,7 @@
-<% tasks_by_status.each do |task| %>
+<% tasks_array.each do |task| %>
   <li class="list-group-item">
     <!-- mark complete -->
-    <a class="task-item" data-toggle="collapse" href="#task<%= task.id %>subtasks">
+    <a class="task-item<%= if task.completed ? ' completed-item' : '' %>" data-toggle="collapse" href="#task<%= task.id %>subtasks">
       <%= task.title %>
     </a>
     <%= erb :'users/subtask_items_partial' %>

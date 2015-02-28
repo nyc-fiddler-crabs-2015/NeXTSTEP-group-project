@@ -1,12 +1,13 @@
 <div class="container-fluid">
   <div class="task-list">
     <div class="row">
-      <% @tasks.each do |day, tasks_by_status| %>
+      <% @tasks.each do |day, tasks_by_day| %>
         <div class="col-md-2 panel panel-default">
           <h3><%= day %></h3>
+          <% p tasks_by_day %>
           <ul class="list-group">
-            <%= erb :'users/task_items_partial', locals: {list: tasks_by_status} %>
-            <%= erb :'users/task_items_partial', locals: {list: tasks_by_status} %>
+            <%= erb :'users/task_items_partial', :locals => {:tasks_array => @tasks_by_day[:open]} %>
+            <%= erb :'users/task_items_partial', :locals => {:tasks_array => @tasks_by_day[:complete]} %>
           </ul>
         </div>
       <% end %>

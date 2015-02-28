@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
   def fetch_tasks
     output_tasks = {}
     ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Weekend'].each do |day|
-      output_tasks[day] = {open: @user.tasks.where(day: day, completed: false),
-                           complete: @user.tasks.where(day: day, completed: true)}
+      output_tasks[day] = {open: tasks.where(day: day, completed: false),
+                           complete: tasks.where(day: day, completed: true)}
     end
     output_tasks
   end
