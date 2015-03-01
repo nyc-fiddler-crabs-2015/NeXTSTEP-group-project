@@ -11,3 +11,18 @@ a.task-item {
 .completed-item {
   text-decoration: line-through !important;
 }
+
+.list-input {
+  border: none;
+}
+
+input.list-input:focus {
+  border-color: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.hidden-submit {
+  display: none;
+  width: 100%;
+}

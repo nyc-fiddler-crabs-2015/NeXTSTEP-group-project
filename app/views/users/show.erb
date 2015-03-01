@@ -8,6 +8,13 @@
           <ul class="list-group">
             <%= erb :'users/task_items_partial', :locals => {:tasks_array => tasks_by_day[:open], :item_class => "task-item"} %>
             <%= erb :'users/task_items_partial', :locals => {:tasks_array => tasks_by_day[:complete], :item_class => "task-item completed-item"} %>
+            <li class="list-group-item">
+              <form action="/task/new" method="get">
+                <input type="hidden" name="day" value="<%= day %>">
+                <input type="text" name="title" placeholder="Create task..." class="list-input">
+                <input type="submit" class="hidden-submit">
+              </form>
+            </li>
           </ul>
         </div>
       <% end %>
