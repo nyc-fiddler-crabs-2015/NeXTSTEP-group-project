@@ -5,7 +5,7 @@ let(:task) {Task.create(title:"Demo App", completed: false, day: "Monday", user_
 
  describe "GET /task/new" do
   it "loads the tasks new page" do
-    get '/tasks/new'
+    get '/task/new'
     expect(last_response).to be_ok
   end
  end
@@ -21,7 +21,7 @@ end
 
 describe "GET /task/:id" do
   it "should display the task with a specific id" do
-    get '/task/#{id}'
+    get "/task/#{task.id}"
     expect(last_response).to be_ok
     expect(last_response.body).to include("<%= @task.title %>")
   end
@@ -29,7 +29,7 @@ describe "GET /task/:id" do
 
 describe "GET /task/:id/edit" do
   it "should display task edit page" do
-    get '/task/#{id}/edit'
+    get "/task/#{task.id}/edit"
     expect(last_response.body).to include("Edit Task")
   end
 end
