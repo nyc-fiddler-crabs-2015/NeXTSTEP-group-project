@@ -5,3 +5,14 @@
   <input class="btn btn-primary" type="submit" value="Update Task">
 </form>
 </div>
+
+<p><a class="btn btn-primary" href="/subtask/new" role="button">Add Subtask</a>
+
+<p>
+  <a class="btn btn-primary" href="/task/<%= @task.id %>/edit" role="button">Edit Task</a>
+</p>
+
+<form action="/task/<%= @task.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input class="btn btn-danger" type="submit" value="Delete Task">
+</form>
