@@ -1,0 +1,13 @@
+<% tasks_array.each do |task| %>
+  <li class="list-group-item">
+    <% if task.completed %>
+      <%= erb :'users/partials/delete_task', :locals => {:task => task} %>
+    <% else %>
+      <%= erb :'users/partials/mark_task_complete', :locals => {:task => task} %>
+    <% end %>
+    <a class="<%= item_class %>" data-toggle="collapse" href="#task<%= task.id %>subtasks">
+      <%= task.title %>
+    </a>
+    <%= erb :'users/partials/subtask_items', :locals => {:task => task} %>
+  </li>
+<% end %>

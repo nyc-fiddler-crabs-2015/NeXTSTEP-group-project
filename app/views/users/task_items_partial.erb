@@ -1,9 +1,0 @@
-<% tasks_array.each do |task| %>
-  <li class="list-group-item">
-    <!-- mark complete -->
-    <a class="<%= item_class %>" data-toggle="collapse" href="#task<%= task.id %>subtasks">
-      <%= task.title %>
-    </a>
-    <%= erb :'users/subtask_items_partial', :locals => {:task => task} %>
-  </li>
-<% end %>

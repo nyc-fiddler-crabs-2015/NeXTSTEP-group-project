@@ -1,0 +1,7 @@
+<form action="/task/<%= task.id %>" method="post" id="form-task-<%= task.id %>">
+  <input type="hidden" name="_method" value="put">
+  <input type="hidden" name="completed" value="true">
+</form>
+<button class="complete-item-button" type="submit" form="form-task-<%= task.id %>" value="Submit">
+  <i class="glyphicon glyphicon-ok task-check-mark"></i>
+</button>

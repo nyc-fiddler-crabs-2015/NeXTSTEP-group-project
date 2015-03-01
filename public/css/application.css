@@ -1,13 +1,129 @@
+body {
+  background-color: #C5EFF7;
+}
+
 .task-list {
   width: 95%;
   margin: auto;
 }
 
+.day-list {
+  background-color: #ECF0F1;
+}
+
+
+.day-list > h3 {
+  text-align: center;
+}
+
 a.task-item {
   color: black;
   text-decoration: none;
+  padding-left: 2px;
+}
+
+.subtask-item {
+  color: #6C7A89;
+  font-size: 12px;
+}
+
+a.subtask-edit-button {
+  color: #6C7A89;
+  font-size: 12px;
+  text-decoration: none;
+  display: inline-block;
+  float: right;
+}
+
+button.complete-item-button {
+  border: none;
+  background: none;
+  box-shadow: none;
+  outline: none;
+  transition: none;
+  padding: 0px;
 }
 
 .completed-item {
   text-decoration: line-through !important;
 }
+
+.list-input {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  transition: none;
+  padding-left: 2px;
+}
+
+input.list-input:focus {
+  border-color: none;
+  box-shadow: none;
+  outline: none;
+  transition: none;
+}
+
+.right-inner-addon {
+  position: relative;
+}
+
+.right-inner-addon input {
+  padding-right: 30px;
+}
+
+.right-inner-addon i {
+  position: absolute;
+  right: 0px;
+  padding: 10px 12px;
+  opacity: 0.4;
+}
+
+.hidden-submit {
+  display: none;
+  width: 100%;
+}
+
+.task-check-mark {
+  color: #6C7A89;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.subtask-check-mark {
+  color: #6C7A89;
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+.subtask-remove {
+  color: #6C7A89;
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+.graph {
+  margin: auto;
+  padding-bottom: 15px;
+}
+
+.graph-section {
+  display: inline-block;
+  color: white;
+}
+
+.category-school-work {
+  background-color: #4183D7;
+}
+
+.category-exercise {
+  background-color: #2C3E50;
+}
+
+.category-house-chores {
+  background-color: #22A7F0;
+}
+
+.headline {
+  text-align: center;
+}
+

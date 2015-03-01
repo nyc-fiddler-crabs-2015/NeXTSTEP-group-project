@@ -1,0 +1,25 @@
+<div class="collapse" id="task<%= task.id %>subtasks">
+  <span class="col-md-12"><a href="/task/<%= task.id %>/edit" class="subtask-edit-button"><i class="glyphicon glyphicon-pencil"></i>Edit</a></span>
+  <% task.subtasks.select { |subtask| !subtask.completed }.each do |open_subtask| %>
+    <p class="subtask-item">
+      <form action="/subtask/<%= open_subtask.id %>" method="post" id="form-subtask-<%= open_subtask.id %>">
+        <input type="hidden" name="_method" value="put">
+        <input type="hidden" name="completed" value="true">
+      </form>
+      <button class="complete-item-button" type="submit" form="form-subtask-<%= open_subtask.id %>" value="Submit">
+        <i class="glyphicon glyphicon-ok subtask-check-mark"></i>
+      </button>
+      <%= open_subtask.title %>
+    </p>
+  <% end %>
+  <% task.subtasks.select { |subtask| subtask.completed }.each do |completed_subtask| %>
+    <p class="subtask-item completed-item">
+      <form action="/subtask/<%= completed_subtask.id %>" method="post" id="form-task-<%= completed_subtask.id %>">
+        <input type="hidden" name="_method" value="delete">
+      </form>
+      <button class="complete-item-button" type="submit" form="form-task-<%= completed_subtask.id %>" value="Submit">
+        <i class="glyphicon glyphicon-remove subtask-remove"></i><%= completed_subtask.title %>
+      </button>
+    </p>
+  <% end %>
+</div>
