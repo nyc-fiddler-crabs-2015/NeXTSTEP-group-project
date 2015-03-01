@@ -1,9 +1,10 @@
-<div class="container">
+<body id="create-image"><div class="container ">
   <center>
-  <span class="text"><h2>Create your task</h2></span>
+  <span class="text"><h1>Create your task</h1></span>
+  <br>
   <form action = '/task/create' method = 'POST' id = 'create_task'>
       <div class="input-group">
-        <input type="text" class="form-control input-text" name = 'title'  value='<%= @title %>' aria-describedby="basic-addon2">
+        <input type="text" class="form-control input-text bckgrnd" name = 'title'  value='<%= @title %>' aria-describedby="basic-addon2">
         <span class="input-group-addon" id="basic-addon2">YOUR TASK'S TITLE</span>
       </div>
       <br>
@@ -20,8 +21,9 @@
   </form>
   <nav>
   <ul class="pager">
-    <li class="previous"><a href="/"><span aria-hidden="true">&larr;</span><span class="input-text"> Home page</span></a></li>
+    <li class="previous bckgrnd"><a href="/"><span aria-hidden="true">&larr;</span><span class="input-text"> Home page</span></a></li>
   </ul>
 </nav>
 </center>
-</div>
+</div></center>
+</body>
