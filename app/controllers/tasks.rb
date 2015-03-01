@@ -1,4 +1,5 @@
 get '/task/new' do
+  @title = params[:title]
   @day = params[:day]
   @category = Category.all
   erb :'/task/create'
