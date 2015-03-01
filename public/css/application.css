@@ -18,6 +18,14 @@ a.task-item {
   font-size: 12px;
 }
 
+a.subtask-edit-button {
+  color: #6C7A89;
+  font-size: 12px;
+  text-decoration: none;
+  display: inline-block;
+  float: right;
+}
+
 button.complete-item-button {
   border: none;
   background: none;

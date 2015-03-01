@@ -1,5 +1,5 @@
 <div class="collapse" id="task<%= task.id %>subtasks">
-  <!-- edit task -->
+  <span class="col-md-12"><a href="/task/<%= task.id %>/edit" class="subtask-edit-button"><i class="glyphicon glyphicon-pencil"></i>Edit</a></span>
   <% task.subtasks.select { |subtask| !subtask.completed }.each do |open_subtask| %>
     <p class="subtask-item">
       <form action="/task/<%= open_subtask.id %>" method="post" id="form-task-<%= open_subtask.id %>">
