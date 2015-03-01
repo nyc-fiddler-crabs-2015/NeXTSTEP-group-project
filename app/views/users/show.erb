@@ -2,7 +2,7 @@
   <div class="task-list">
     <div class="row">
       <% @tasks.each do |day, tasks_by_day| %>
-        <div class="col-md-2 panel panel-default">
+        <div class="col-md-2 panel panel-default day-list">
           <h3><%= day %></h3>
           <% p tasks_by_day %>
           <ul class="list-group">
@@ -11,7 +11,10 @@
             <li class="list-group-item">
               <form action="/task/new" method="get">
                 <input type="hidden" name="day" value="<%= day %>">
-                <input type="text" name="title" placeholder="Create task..." class="list-input">
+                <div class="right-inner-addon">
+                  <i class="glyphicon glyphicon-circle-arrow-right"></i>
+                  <input type="text" class="form-control list-input" placeholder="Create a task...">
+                </div>
                 <input type="submit" class="hidden-submit">
               </form>
             </li>
