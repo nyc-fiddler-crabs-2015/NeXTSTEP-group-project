@@ -15,7 +15,7 @@ describe "POST /task/create" do
    post '/task/create', params={task:{title:"Demo App", completed: false, day: "Monday", user_id: 1, category_id: 1}}
    expect(last_response).to be_redirect
    follow_redirect!
-   last_request.path.should == '/users/<%= user.id %>'
+   last_request.path.should == "/users/<%= user.id %>"
   end
 end
 
@@ -32,6 +32,6 @@ describe "GET /task/:id/edit" do
     get "/task/#{task.id}/edit"
     expect(last_response.body).to include("Edit Task")
   end
-end
+ end
 
 end
