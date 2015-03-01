@@ -1,16 +1,16 @@
 <div>
-  <form action = '/task/create' method = 'POST' id = 'create_task'>
-    <fieldset>
-      <legend>Create your task : </legend>
-      <input type = 'text' name = 'title' placeholder='TITLE'><br>
-      <input type='hidden' name='day' value='<%= @day %>'><br>
-      <input type ='submit' value = 'submit'><br>
-    </fieldset>
-  </form>
-
+  <center>
+  <h2>Create your task:</h2>
   <select name = 'category' form = 'create_task'>
         <% @category.each do |cat| %>
         <option value='<%= cat.id %>'><%= cat.title %></option>
         <% end %>
-  </select>
+  </select><br>
+  <p></p>
+  <form action = '/task/create' method = 'POST' id = 'create_task'>
+      <input type = 'text' name = 'title' placeholder='<%= @title%>'><br>
+      <input type='hidden' name='day' value='<%= @day %>'><br>
+      <input type ='submit' value = 'submit'><br>
+  </form>
+</center>
 </div>
