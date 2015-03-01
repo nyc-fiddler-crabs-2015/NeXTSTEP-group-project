@@ -139,6 +139,28 @@ input.list-input:focus {
   border-radius: 10px;
 }
 .text {
+  font-family: Londrina Sketch;
   font-style: bold;
- color: #660000;
+  color:  #6B2424;
+}
+.input-text {
+  font-style: bold;
+  font-size: 20px;
+  font-family: Neucha;
+  color:  #6B2424;
+}
+
+#create-image {
+  background-color: #E0C2C2;
+}
+.bckgrnd {
+  /*background-color: #CCCCCC;*/
+}
+.input-group, .form-control {
+   height: 55px;
+}
+.sel {
+  height: 45px;
+  width: 179px;
+  font-size: 27px;
 }

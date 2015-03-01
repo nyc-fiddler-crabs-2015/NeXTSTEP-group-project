@@ -1,10 +1,11 @@
-<div class="container">
+<body id="create-image"><div class="container ">
   <center>
-  <span class="text"><h2>Create your task</h2></span>
+  <span class="text"><h1>Create your task</h1></span>
+  <br>
   <form action = '/task/create' method = 'POST' id = 'create_task'>
       <div class="input-group">
-        <input type="text" class="form-control" name = 'title' placeholder='<%= @title %>' aria-describedby="basic-addon2">
-        <span class="input-group-addon" id="basic-addon2">YOUR TASK's TITLE</span>
+        <input type="text" class="form-control input-text bckgrnd" name = 'title'  value='<%= @title %>' aria-describedby="basic-addon2">
+        <span class="input-group-addon" id="basic-addon2">YOUR TASK'S TITLE</span>
       </div>
       <br>
       <span class="text"><h4>SELECT CATEGORY</h4></span>
@@ -16,12 +17,13 @@
      </select><br>
   <p></p>
       <input type='hidden' name='day' value='<%= @day %>'><br>
-      <input type ='submit' class="sub" value = 'submit'><br>
-      <nav>
+      <input type ='submit' class="sub input-text" value = 'submit'><br>
+  </form>
+  <nav>
   <ul class="pager">
-    <li class="previous"><a href="/"><span aria-hidden="true">&larr;</span> Home page</a></li>
+    <li class="previous bckgrnd"><a href="/"><span aria-hidden="true">&larr;</span><span class="input-text"> Home page</span></a></li>
   </ul>
 </nav>
-  </form>
 </center>
-</div>
+</div></center>
+</body>
