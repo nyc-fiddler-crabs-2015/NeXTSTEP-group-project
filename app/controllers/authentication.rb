@@ -7,20 +7,18 @@ get '/authentication/signup' do
 end
 
 post '/authentication/login' do
-  user = User.find(params[:email])
+  user = User.find_by(email: params[:email])
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
-    redirect '/'
+    redirect "/users/#{user.id}"
   else
     redirect '/?error=true'
   end
 end
 
 post '/authentication/register_user' do
-  puts params
   if params[:password] == params[:password_confirm]
-
-    user = User.new(email: params[:email], password: params[:password])
+    user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
     user.save
     session[:user_id] = user.id
     redirect '/'
@@ -32,5 +30,5 @@ end
 
 get '/authentication/logout' do
   session[:user_id] = nil
-  200
+  redirect '/'
 end
