@@ -139,6 +139,12 @@ input.list-input:focus {
   border-radius: 10px;
 }
 .text {
+  font-family: Londrina Sketch;
   font-style: bold;
- color: #660000;
+  color: grey;
+}
+.input-text {
+  font-size: 20px;
+  font-family: Neucha;
+  color: grey;
 }
