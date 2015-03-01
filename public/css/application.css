@@ -127,3 +127,18 @@ input.list-input:focus {
   text-align: center;
 }
 
+.sel {
+  width: 20%;
+  height: 30px;
+  background-color: grey;
+}
+
+.sub {
+  width: 15%;
+  height: 17%;
+  border-radius: 10px;
+}
+.text {
+  font-style: bold;
+ color: #660000;
+}
