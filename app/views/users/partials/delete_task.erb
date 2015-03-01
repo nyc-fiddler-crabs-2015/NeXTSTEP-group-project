@@ -1,0 +1,6 @@
+<form action="/task/<%= task.id %>" method="post" id="form-task-<%= task.id %>">
+  <input type="hidden" name="_method" value="delete">
+</form>
+<button class="complete-item-button" type="submit" form="form-task-<%= task.id %>" value="Submit">
+  <i class="glyphicon glyphicon-remove task-check-mark"></i>
+</button>

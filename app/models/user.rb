@@ -10,4 +10,15 @@ class User < ActiveRecord::Base
     end
     output_tasks
   end
+
+  def task_categories(day_of_week = nil)
+    output_tasks = {}
+    tasks_array = day_of_week ? tasks.where(day: day_of_week) : tasks
+    Category.all.each do |cat|
+      if tasks_array.select {|task| task.category_id == cat.id}.count > 0
+        output_tasks[cat.title] = tasks_array.select {|task| task.category_id == cat.id}.count
+      end
+    end
+    output_tasks
+  end
 end
