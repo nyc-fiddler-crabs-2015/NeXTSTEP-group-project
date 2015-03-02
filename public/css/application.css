@@ -149,7 +149,12 @@ input.list-input:focus {
   font-family: Neucha;
   color:  #6B2424;
 }
-
+.input-group {
+  width: 76%;
+}
+/*#title {
+  width: 80%;
+}*/
 #create-image {
   background-color: #E0C2C2;
 }
@@ -163,4 +168,8 @@ input.list-input:focus {
   height: 45px;
   width: 179px;
   font-size: 27px;
+}
+.pager {
+  margin-left: auto;
+  margin-right: auto;
 }
