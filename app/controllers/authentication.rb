@@ -18,8 +18,11 @@ end
 
 post '/authentication/register_user' do
   if params[:password] == params[:password_confirm]
+    # You can just do User.new(params) 
     user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
     user.save
+
+    #What if the user does not save?  You are going to be stuck 
     session[:user_id] = user.id
     redirect '/'
   else

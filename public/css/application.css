@@ -22,16 +22,19 @@ h6 {
   color: #777;
 }
 
-.tileMe li {
+/* fix to this syntax*/
+.tileMe > ul > li {
     display: inline;
     float: left;
     margin-right: auto;
 }
 
+/* Dashes instead of underscores */
 .the_footer{
   width:100%;
   background-color: black;
 }
+
 .topnav {
     font-size: 14px;
 }
@@ -48,6 +51,7 @@ h6 {
   margin-left: auto;
 }
 
+/* Remove Copy Pasta comments */
 .intro-header {
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
     padding-bottom: 50px;
@@ -79,6 +83,7 @@ h6 {
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
 }
 
+/* If you are going to use it, know what it does */
 @media(max-width:767px) {
     .intro-message {
         padding-bottom: 15%;

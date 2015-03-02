@@ -2,8 +2,10 @@ require_relative '../spec_helper'
 
 describe 'Subtasks Model' do
   it 'marked the subtask as completed in the model object' do
+    #Use Let
     task = Task.create(title: 'test task', day: 'Monday', user_id: 1, category_id: 1)
     subtask = Subtask.new(title: 'This subtask should be complete', task_id: task.id)
+    #Not testing anything AR is testing 
     subtask.completed = true
     expect(subtask.completed).to eq(true)
   end

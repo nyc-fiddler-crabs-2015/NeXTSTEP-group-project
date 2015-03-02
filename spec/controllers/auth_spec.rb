@@ -2,6 +2,8 @@ require_relative '../spec_helper'
 
 describe "Authentication controller"  do
   let(:user) {User.create(first_name: "Demo", last_name: "Person", email: "demoperson@email.com", password: "password")}
+  # let(:user_params) {first_name: "stuff" } }
+  # let(:user) {User.create(user_param)}
 
 
   describe 'GET /authentication/signup' do
@@ -18,7 +20,7 @@ describe "Authentication controller"  do
    end
   end
 
-
+  #FIX THIS TEST
   describe 'POST /authentication/login' do
     it 'should log in a registered user' do
       post '/authentication/login', params={user:{email: "demoperson@email.com", password: "password"}}
@@ -28,12 +30,13 @@ describe "Authentication controller"  do
    end
   end
 
-
+   #FIX THIS TEST
    describe 'POST /authentication/register_user' do
     it 'should register a user' do
       get '/authentication/register_user', params={user:{first_name: "Demo", last_name: "Person", email: "demoperson@email.com", password: "password"}}
       expect(last_response).to be_redirect
       follow_redirect!
+      # USE Expect Sytnax
       last_request.oath.should == "/"
    end
   end
@@ -47,9 +50,4 @@ describe "Authentication controller"  do
       last_request.path.should == '/'
    end
   end
-
-
-
-
-
 end

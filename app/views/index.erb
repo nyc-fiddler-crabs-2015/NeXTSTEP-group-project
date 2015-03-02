@@ -1,3 +1,6 @@
+<!-- this file has a lot going on in it, you're probably missing some closing tags, to much indentation etc.
+      generally speaking looks meh --> 
+<!-- Braek out into partials / move to layout  -->
 <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
         <div class="container topnav">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -13,12 +16,14 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
+                  <li>
+                  <!-- do not use forms for plain navigation / instead use <a href> -->
                         <form action='/authentication/signin' method="get">
                           <button type="login">Login</button>
                         </form>
                     </li>
                     <li>
+                  <!-- do not use forms for plain navigation / instead use <a href> -->
                         <form action='/authentication/signup' method="get">
                           <button type="signup">Signup</button>
                         </form>
@@ -30,6 +35,8 @@
         <!-- /.container -->
     </nav>
 
+
+    <!-- Make a parital -->
     <div class="intro-header">
         <div class="container">
             <div class="row">

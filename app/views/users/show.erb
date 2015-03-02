@@ -9,8 +9,10 @@
       <h1 class="headline">TaskBalance</h1>
       <%= erb :'users/partials/graph', :locals => {:categories_hash => @user.task_categories, :tasks_total => @user.tasks.count} %>
       <% @tasks.each do |day, tasks_by_day| %>
+        <!-- put ALLLL DISSSSSS IN A partial -->
         <div class="col-md-2 panel panel-default day-list">
           <h3><%= day %></h3>
+          <!-- no debug fun -->
           <% p tasks_by_day %>
           <ul class="list-group">
             <%= erb :'users/partials/task_items', :locals => {:tasks_array => tasks_by_day[:open], :item_class => "task-item"} %>
