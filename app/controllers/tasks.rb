@@ -24,11 +24,11 @@ end
 
 put '/task/:id' do
   @task = Task.find(params[:id])
-  @task.update_attributes(params[:title])
-  redirect '/task/#{id}'
+  @task.update(title: params[:title])
+  redirect "/users/#{@task.user_id}"
 end
 
 delete '/task/:id' do
   @task = Task.find(params[:id]).destroy
-  redirect '/users/<%= user.id %>'
+  redirect "/users/#{@task.user_id}"
 end

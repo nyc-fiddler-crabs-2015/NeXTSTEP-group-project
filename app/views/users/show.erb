@@ -1,6 +1,11 @@
-<div class="container-fluid">
+<div class="container-fluid task-list-background">
   <div class="task-list">
     <div class="row">
+      <div class="logout-button">
+        <form action='/authentication/logout' method="get">
+          <button type="logout">Logout</button>
+        </form>
+      </div>
       <h1 class="headline">TaskBalance</h1>
       <%= erb :'users/partials/graph', :locals => {:categories_hash => @user.task_categories, :tasks_total => @user.tasks.count} %>
       <% @tasks.each do |day, tasks_by_day| %>
@@ -25,13 +30,6 @@
       <% end %>
     </div>
   </div>
-</div>
-
-<div>
-<form action='/authentication/logout' method="get">
-  <button type="logout">Logout</button>
-</form>
-
 </div>
 
 
