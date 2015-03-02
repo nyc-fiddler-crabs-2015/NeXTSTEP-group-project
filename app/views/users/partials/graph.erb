@@ -1,6 +1,6 @@
 <div class="graph container-fluid">
   <% categories_hash.each do |category, count| %>
-    <div class="graph-section category-<%= category.gsub(' ', '-') %>" style="width:<%= ((count.to_f/tasks_total.to_f)*100).floor %>%">
+    <div class="graph-section category-<%= category.downcase.gsub(' ', '-') %>" style="width:<%= ((count.to_f/tasks_total.to_f)*100).floor %>%">
       <%= category.capitalize %>
     </div>
   <% end %>
