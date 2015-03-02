@@ -14,7 +14,7 @@ end
 
 get '/task/:id' do
  @task = Task.find(params[:id])
- erb :'task/show'
+ erb :'task/edit'
 end
 
 get '/task/:id/edit' do

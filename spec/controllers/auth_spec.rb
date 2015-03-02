@@ -42,7 +42,7 @@ describe "Authentication controller"  do
   describe 'GET /authentication/logout' do
     it 'should log the user out of the app' do
       get '/authentication/logout'
-      expect(last_response.redirect?).to be_true
+      expect(last_response).to be_redirect
       follow_redirect!
       last_request.path.should == '/'
    end
